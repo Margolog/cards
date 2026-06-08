@@ -4,19 +4,15 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.RegistrationPage;
-import pages.TextBoxPage;
-import testdata.TestData;
+import pages.MainPage;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class BaseTest {
-    TextBoxPage texBoxPage = new TextBoxPage();
-    RegistrationPage registrationPage = new RegistrationPage();
+    MainPage mainPage = new MainPage();
 
 
     @BeforeAll
