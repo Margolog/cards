@@ -3,21 +3,28 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginPage {
 
-    //Elements
-    private  SelenideElement googleLoginButton = $("img[src*='google']").ancestor("button");
-    private SelenideElement emailInput = $("input[placeholder='Введите email']");
-    private SelenideElement passwordInput = $("input[placeholder='Введите пароль']");
-    private SelenideElement loginButton = $$("button").findBy(text("ВОЙТИ"));
-    private SelenideElement emailValidationError = $(byText("Неправильный адрес электронной почты"));
+    // Elements
+    private final SelenideElement googleLoginButton =
+            $("img[src*='google']").ancestor("button");
 
-    //Actions
+    private final SelenideElement emailInput =
+            $("input[autocomplete='username']");
+
+    private final SelenideElement passwordInput =
+            $("input[autocomplete='current-password']");
+
+    private final SelenideElement loginButton =
+            $("button[type='submit']");
+
+    private final SelenideElement validationError =
+            $(".v-messages__message");
+
+    // Actions
     @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         open("/login");
@@ -42,15 +49,15 @@ public class LoginPage {
         return this;
     }
 
-    @Step("Нажать кнопку Войти")
+    @Step("Нажать кнопку входа")
     public LoginPage clickLoginButton() {
         loginButton.click();
         return this;
     }
 
-    @Step("Проверить ошибку валидации email")
-    public LoginPage checkEmailValidationError() {
-        emailValidationError.shouldBe(visible);
+    @Step("Проверить, что отображается сообщение об ошибке")
+    public LoginPage checkValidationErrorIsVisible() {
+        validationError.shouldBe(visible);
         return this;
     }
 }
