@@ -12,9 +12,9 @@ public class MainPage {
 
     //Elements
     private SelenideElement loginButton = $("a[href='/login']");
-    private SelenideElement registrationButton = $("a[href='/registration']");
+    private final SelenideElement signUpButton = $("a[href='/sign-up']");
     private SelenideElement languageButton = $("button[aria-haspopup='true']");
-    private SelenideElement telegramSupportLink = $("a[target='_blank']");
+    private final SelenideElement telegramSupportLink = $$("a").findBy(text("@multicards_support"));
 
     //Actions
     @Step("Открыть главную страницу")
@@ -29,11 +29,12 @@ public class MainPage {
         return this;
     }
 
-    @Step("Проверить ссылку на телеграм")
-    public MainPage checkTelegramSupportLink(String telegramSupport) {
-        telegramSupportLink.shouldHave(
-                attribute("href", telegramSupport)
-        );
+    @Step("Проверить ссылку на Telegram support")
+    public MainPage checkTelegramSupportLink(String expectedUrl) {
+        telegramSupportLink
+                .scrollTo()
+                .shouldHave(attribute("href", expectedUrl));
+
         return this;
     }
 
@@ -57,7 +58,7 @@ public class MainPage {
 
     @Step("Проверить кнопку регистрации")
     public MainPage checkRegistrationButtonText(String text) {
-        registrationButton.shouldHave(text(text));
+        signUpButton.shouldHave(text(text));
         return this;
     }
 }
