@@ -15,14 +15,10 @@ import java.util.Map;
 import static com.codeborne.selenide.Selenide.*;
 
 public class BaseTest {
-    protected MainPage mainPage;
-    protected LoginPage loginPage;
+    MainPage mainPage= new MainPage();
+    LoginPage loginPage = new LoginPage();
 
-    @BeforeEach
-    void initPages() {
-        mainPage = new MainPage();
-        loginPage = new LoginPage();
-    }
+
     @BeforeAll
     static void setup() {
 
