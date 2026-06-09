@@ -20,6 +20,7 @@ public class MainPage {
     @Step("Открыть главную страницу")
     public MainPage openPage() {
         open("/");
+        loginButton.shouldBe(visible);
         return this;
     }
 
