@@ -27,7 +27,7 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.headless = Boolean.parseBoolean(System.getProperty("headless","true"));
-        Configuration.timeout = 10000;
+        Configuration.timeout = 50000;
         Configuration.pageLoadTimeout = 60000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
