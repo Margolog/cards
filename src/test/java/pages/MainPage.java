@@ -38,12 +38,6 @@ public class MainPage {
         return this;
     }
 
-    @Step("Открыть страницу с логином")
-    public MainPage openLoginPage() {
-        loginButton.click();
-        return this;
-    }
-
     @Step("Открыть выбор языка")
     public MainPage openLanguageMenu() {
         languageButton.click();
