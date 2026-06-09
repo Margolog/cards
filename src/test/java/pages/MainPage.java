@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.source;
 
 
 public class MainPage {
@@ -21,6 +22,11 @@ public class MainPage {
     public MainPage openPage() {
         open("/");
         loginButton.shouldBe(visible);
+        System.out.println("CURRENT URL: " + webdriver().driver().url());
+        System.out.println("TITLE: " + title());
+        System.out.println("HAS USERNAME INPUT: " + source().contains("autocomplete=\"username\""));
+        System.out.println("HAS GOOGLE: " + source().toLowerCase().contains("google"));
+        System.out.println("HAS BUTTON TYPE SUBMIT: " + source().contains("type=\"submit\""));
         return this;
     }
 
