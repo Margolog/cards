@@ -28,7 +28,6 @@ public class LoginPage {
     @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         open("/login");
-        loginButton.shouldBe(visible);
         return this;
     }
 

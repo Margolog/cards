@@ -1,11 +1,10 @@
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.WebDriverRunner;
+
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.LoginPage;
 import pages.MainPage;
@@ -27,8 +26,8 @@ public class BaseTest {
         Configuration.browserVersion = System.getProperty("browserVersion");
         Configuration.baseUrl = System.getProperty("baseUrl");
         Configuration.headless = Boolean.parseBoolean(System.getProperty("headless","true"));
-        Configuration.timeout = 50000;
-        Configuration.pageLoadTimeout = 60000;
+//        Configuration.timeout = 50000;
+//        Configuration.pageLoadTimeout = 60000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -71,26 +70,3 @@ public class BaseTest {
         closeWebDriver();
     }
 }
-
-//    @BeforeAll
-//    static void setup() {
-//        Configuration.baseUrl = "https://multicards.io";
-//        Configuration.browserSize = "1920x1080";
-//
-//        String remoteUrl = System.getProperty("remoteUrl");
-//        if (remoteUrl != null) {
-//            Configuration.remote = remoteUrl;
-//        }
-//
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//    }
-//
-//    @AfterEach
-//    void addAttachments() {
-//        Attach.screenshotAs("Screenshot");
-//        Attach.pageSource();
-//        Attach.browserConsoleLogs();
-//        closeWebDriver();
-//
-//    }
-
