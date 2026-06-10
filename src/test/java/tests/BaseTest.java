@@ -1,3 +1,5 @@
+package tests;
+
 import com.codeborne.selenide.Configuration;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -20,7 +22,6 @@ public class BaseTest {
 
     @BeforeAll
     static void setup() {
-
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserSize = System.getProperty("browserResolution", "1920x1080");
         Configuration.browserVersion = System.getProperty("browserVersion");
