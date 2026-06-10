@@ -93,7 +93,6 @@ gradle clean test \
 -DbrowserVersion=127.0 \
 -DbrowserResolution=1920x1080 \
 -DbaseUrl=https://multicards.io \
--Dremote=https://user1:1234@selenoid.autotests.cloud/wd/hub
 ```
 
 ---
