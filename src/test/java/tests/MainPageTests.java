@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.api.Test;
+import pages.MainPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -12,6 +13,7 @@ public class MainPageTests extends BaseTest {
 
     private static String telegramSupportUrl = "https://t.me/multicards_support";
     private static String registrationButtonText = "Sign up";
+    MainPage mainPage = new MainPage();
 
     @ValueSource(strings = {
             "Las ventajas",

@@ -19,7 +19,7 @@ public class MainPage {
     //Actions
     @Step("Открыть главную страницу")
     public MainPage openPage() {
-        open("/");
+        open("");
         return this;
     }
 

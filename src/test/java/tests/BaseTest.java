@@ -8,17 +8,14 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import pages.LoginPage;
 import pages.MainPage;
+import pages.LoginPage;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class BaseTest {
-    MainPage mainPage= new MainPage();
-    LoginPage loginPage = new LoginPage();
-
 
     @BeforeAll
     static void setup() {

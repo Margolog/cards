@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.LoginPage;
 
 import static io.qameta.allure.Allure.step;
 
@@ -9,6 +10,8 @@ public class LoginTests extends BaseTest {
 
     private static String inValidEmail = "inValidEmail";
     private static String password = "1234";
+    LoginPage loginPage = new LoginPage();
+
 
     @Test
     @DisplayName("На странице авторизации отображается кнопка входа через Google")
