@@ -1,5 +1,9 @@
 # Проект по автоматизации тестирования сайта MultiCards
 
+<p align="center">
+<img src="images/multicards-logo.png" alt="MultiCards" width="320"/>
+</p>
+
 > Автоматизированные UI-тесты для сайта https://multicards.io
 
 ## Содержание
@@ -8,9 +12,9 @@
 - Реализованные проверки
 - Сборка в Jenkins
 - Запуск из терминала
-- Allure Report
-- Allure TestOps
-- Jira
+- [Allure Report](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/allure/)
+- [Allure TestOps](https://allure.autotests.cloud/project/4488/dashboards)
+- [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1613)
 - Telegram уведомления
 
 ---
@@ -31,21 +35,10 @@
 
 ## Структура проекта
 
-```text
-cards
-├── images
-├── src
-│   └── test
-│       ├── java
-│       │   ├── data
-│       │   ├── helpers
-│       │   ├── pages
-│       │   └── tests
-│       └── resources
-├── build.gradle
-├── README.md
-└── .gitignore
-```
+- `src/test/java/tests` - тестовые классы и базовая настройка запуска.
+- `src/test/java/pages` - page objects для экранов MultiCards.
+- `src/test/java/helpers` - вспомогательные методы для вложений в отчеты.
+- `src/test/java/data` - тестовые данные и перечисления.
 
 ---
 
@@ -97,7 +90,7 @@ gradle clean test \
 
 ---
 
-## Allure Report
+## [Allure Report](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/allure/)
 
 ### Dashboard
 
@@ -119,7 +112,7 @@ gradle clean test \
 
 ---
 
-## Allure TestOps
+## [Allure TestOps](https://allure.autotests.cloud/project/4488/dashboards)
 
 ### Dashboard
 
@@ -141,7 +134,7 @@ gradle clean test \
 
 ---
 
-## Jira
+## [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1613)
 
 <p align="center">
 <img src="images/jira.png" alt="Jira" width="900"/>
@@ -152,5 +145,5 @@ gradle clean test \
 ## Telegram уведомления
 
 <p align="center">
-<img src="images/tg.png" alt="Telegram" width="600"/>
+<img src="images/telegram.png" alt="Telegram" width="600"/>
 </p>
