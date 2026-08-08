@@ -49,7 +49,7 @@ public class MainPageTests extends BaseTest {
 
     @Test
     @DisplayName("После выбора испанского языка кнопка регистрации отображается на английском языке")
-    void russianLanguageShouldBeSelectedTest() {
+    void spanishLanguageShouldBeSelectedTest() {
         step("Открыть главную страницу", () -> {
             mainPage.openPage();
         });

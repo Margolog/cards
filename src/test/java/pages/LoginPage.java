@@ -21,6 +21,12 @@ public class LoginPage {
     private final SelenideElement loginButton =
             $("button[type='submit']");
 
+    private final SelenideElement forgotPasswordLink =
+            $("a[href='/forgot-password']");
+
+    private final SelenideElement signUpLink =
+            $("a[href='/sign-up']");
+
     private final SelenideElement validationError =
             $(".v-messages__message");
 
@@ -53,6 +59,18 @@ public class LoginPage {
     public LoginPage clickLoginButton() {
         loginButton.click();
         return this;
+    }
+
+    @Step("Перейти на страницу восстановления пароля")
+    public ForgotPasswordPage openForgotPasswordPage() {
+        forgotPasswordLink.click();
+        return new ForgotPasswordPage();
+    }
+
+    @Step("Перейти на страницу регистрации")
+    public SignUpPage openSignUpPage() {
+        signUpLink.click();
+        return new SignUpPage();
     }
 
     @Step("Проверить, что отображается сообщение об ошибке")

@@ -10,6 +10,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -28,18 +29,29 @@ public class BaseTest {
         Configuration.browserVersion = webConfig.getBrowserVersion();
         Configuration.baseUrl = webConfig.getBaseUrl();
         Configuration.headless = webConfig.isHeadless();
-        Configuration.remote = webConfig.getRemoteUrl().isBlank() ? null : webConfig.getRemoteUrl();
+        Configuration.remote = webConfig.getRemoteUrl().isBlank()
+                ? null
+                : webConfig.getRemoteUrl();
+
         Configuration.savePageSource = true;
         Configuration.screenshots = true;
 
+        ChromeOptions options = new ChromeOptions();
+
+        options.addArguments("--lang=en-US");
+        options.setExperimentalOption(
+                "prefs",
+                Map.of("intl.accept_languages", "en-US,en")
+        );
+
         if (Configuration.remote != null) {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+            options.setCapability("selenoid:options", Map.of(
                     "enableVNC", true,
                     "enableVideo", true
             ));
-            Configuration.browserCapabilities = capabilities;
         }
+
+        Configuration.browserCapabilities = options;
     }
 
     @BeforeEach
