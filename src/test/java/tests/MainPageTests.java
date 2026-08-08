@@ -1,6 +1,7 @@
 package tests;
 
 import data.Language;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -13,7 +14,7 @@ import static io.qameta.allure.Allure.step;
 
 public class MainPageTests extends BaseTest {
 
-    MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
     @ValueSource(strings = {
             "Las ventajas",
@@ -21,6 +22,7 @@ public class MainPageTests extends BaseTest {
             "FAQ"
     })
     @ParameterizedTest(name = "В хедере на испанском отображается пункт меню: {0}")
+    @Story("Локализация интерфейса")
     @DisplayName("В хедере отображаются пункты меню")
     void headerMenuItemsShouldBeVisibleTest(String menuItem) {
         step("Открыть главную страницу на испанском языке", () -> {
@@ -35,6 +37,7 @@ public class MainPageTests extends BaseTest {
     }
 
     @Test
+    @Story("Поддержка в Telegram")
     @DisplayName("Ссылка на Telegram support соответствует ожидаемой")
     void telegramSupportLinkShouldBeCorrectTest() {
         step("Открыть главную страницу", () -> {
@@ -48,6 +51,7 @@ public class MainPageTests extends BaseTest {
 
 
     @Test
+    @Story("Локализация интерфейса")
     @DisplayName("После выбора испанского языка кнопка регистрации отображается на английском языке")
     void spanishLanguageShouldBeSelectedTest() {
         step("Открыть главную страницу", () -> {

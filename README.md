@@ -63,14 +63,18 @@
 <img src="images/Jenkins.png" alt="Jenkins" width="900"/>
 </p>
 
-Сборка запускается через Jenkins с параметрами:
+Jenkins выполняет удалённый запуск тестов со следующими настройками:
 
-- browser
-- browserVersion
-- browserResolution
-- baseUrl
-- remote
-- headless
+- окружение: `remote`
+- браузер: `chrome`
+- версия браузера: `148.0`
+- размер окна: `1920x1080`
+- базовый URL: `https://multicards.io`
+- режим запуска: `headless=true`
+
+Адрес Selenoid хранится в Jenkins Credentials и передаётся в сборку через
+переменную `SELENOID_REMOTE_URL`. Результаты тестов из `build/allure-results`
+публикуются в Allure Report и отправляются в Allure TestOps.
 
 ---
 
@@ -82,8 +86,7 @@
 ./gradlew clean test
 ```
 
-По умолчанию используются настройки из `local.properties`: локальный Chrome,
-видимое окно браузера и сайт MultiCards. Любую настройку можно переопределить,
+По умолчанию используются настройки из `local.properties`: локальный Chrome. Любую настройку можно переопределить,
 например: `./gradlew clean test -Dheadless=true -DbrowserSize=1440x900`.
 
 ### Удалённый запуск
@@ -97,8 +100,6 @@
 `-Dbrowser`, `-DbrowserVersion`, `-DbrowserSize`, `-DbaseUrl`, `-DremoteUrl` и
 `-Dheadless`.
 
-Логин и пароль Selenoid не следует сохранять в репозитории: передавайте URL
-параметром Jenkins или через командную строку.
 
 ---
 

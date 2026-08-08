@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.ForgotPasswordPage;
@@ -13,9 +14,10 @@ import static io.qameta.allure.Allure.step;
 
 public class LoginTests extends BaseTest {
 
-    LoginPage loginPage = new LoginPage();
+    private final LoginPage loginPage = new LoginPage();
 
     @Test
+    @Story("Авторизация через Google")
     @DisplayName("На странице авторизации отображается кнопка входа через Google")
     void googleLoginButtonShouldBeVisibleTest() {
         step("Открыть страницу логина", () -> {
@@ -28,6 +30,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
+    @Story("Валидация формы авторизации")
     @DisplayName("При вводе некорректного email отображается ошибка Wrong email")
     void invalidEmailValidationShouldBeShownTest() {
         step("Открыть страницу авторизации", () -> {
@@ -50,6 +53,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
+    @Story("Восстановление пароля")
     @DisplayName("После отправки формы восстановления пароля отображается поле Confirmation code")
     void confirmationCodeShouldBeShownAfterPasswordRecoveryRequestTest() {
         ForgotPasswordPage forgotPasswordPage = step("Открыть страницу восстановления пароля", () ->
@@ -70,6 +74,7 @@ public class LoginTests extends BaseTest {
     }
 
     @Test
+    @Story("Переход к регистрации")
     @DisplayName("Со страницы авторизации можно перейти на страницу регистрации")
     void signUpPageShouldBeOpenedFromLoginPageTest() {
         step("Открыть страницу авторизации", () -> {
