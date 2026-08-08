@@ -15,7 +15,6 @@ public class LoginTests extends BaseTest {
 
     LoginPage loginPage = new LoginPage();
 
-
     @Test
     @DisplayName("На странице авторизации отображается кнопка входа через Google")
     void googleLoginButtonShouldBeVisibleTest() {

@@ -12,8 +12,8 @@
 - Реализованные проверки
 - Сборка в Jenkins
 - Запуск из терминала
-- [Allure Report](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/allure/)
-- [Allure TestOps](https://allure.autotests.cloud/project/4488/dashboards)
+- [Allure Report](https://jenkins.qa.guru/job/41-m_a_l_qa-unit10-ui/allure/)
+- [Allure TestOps](https://allure.autotests.cloud/project/5244/test-cases/44953?search=W3siaWQiOiJ0eXBlIiwidHlwZSI6InRlc3RDYXNlVHlwZUFycmF5IiwidmFsdWUiOlsiYXV0b21hdGVkIl19XQ%3D%3D&treeId=0)
 - [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1613)
 - Telegram уведомления
 
@@ -46,6 +46,8 @@
 
 - Проверка отображения кнопки входа через Google
 - Проверка отображения ошибки при вводе некорректного email
+- Проверка отображения поля Confirmation code после отправки формы восстановления пароля
+- Проверка перехода на страницу регистрации со страницы авторизации
 - Проверка переключения сайта на испанский язык
 - Проверка текста кнопки регистрации после смены языка
 - Проверка отображения пунктов меню в хедере
@@ -55,7 +57,7 @@
 
 ## Сборка в Jenkins
 
-[Открыть Job в Jenkins](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/)
+[Открыть Job в Jenkins](https://jenkins.qa.guru/job/41-m_a_l_qa-unit10-ui/)
 
 <p align="center">
 <img src="images/Jenkins.png" alt="Jenkins" width="900"/>
@@ -100,18 +102,18 @@
 
 ---
 
-## [Allure Report](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/allure/)
+## [Allure Report](https://jenkins.qa.guru/job/41-m_a_l_qa-unit10-ui/allure/)
 
 ### Dashboard
 
 <p align="center">
-<img src="images/Allure.png" alt="Allure Dashboard" width="900"/>
+<img src="images/Allure2.png" alt="Allure Dashboard" width="900"/>
 </p>
 
 ### Тест-кейсы
 
 <p align="center">
-<img src="images/allure cs.png" alt="Allure Cases" width="900"/>
+<img src="images/allure cs2.png" alt="Allure Cases" width="900"/>
 </p>
 
 ### Графики
@@ -122,18 +124,18 @@
 
 ---
 
-## [Allure TestOps](https://allure.autotests.cloud/project/4488/dashboards)
+## [Allure TestOps](https://allure.autotests.cloud/project/5244/test-cases/44953?search=W3siaWQiOiJ0eXBlIiwidHlwZSI6InRlc3RDYXNlVHlwZUFycmF5IiwidmFsdWUiOlsiYXV0b21hdGVkIl19XQ%3D%3D&treeId=0)
 
 ### Dashboard
 
 <p align="center">
-<img src="images/Allure TestOps Dashboard.png" alt="TestOps Dashboard" width="900"/>
+<img src="images/Allure TestOps Dashboard2.png" alt="TestOps Dashboard" width="900"/>
 </p>
 
 ### Автоматизированные тест-кейсы
 
 <p align="center">
-<img src="images/auto cs.png" alt="Auto Cases" width="900"/>
+<img src="images/auto cs2.png" alt="Auto Cases" width="900"/>
 </p>
 
 ### Ручные тест-кейсы
@@ -155,5 +157,5 @@
 ## Telegram уведомления
 
 <p align="center">
-<img src="images/telegram.png" alt="Telegram" width="600"/>
+<img src="images/telegram2.png" alt="Telegram" width="600"/>
 </p>
