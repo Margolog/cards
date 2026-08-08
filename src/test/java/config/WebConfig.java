@@ -1,0 +1,34 @@
+package config;
+
+import org.aeonbits.owner.Config;
+
+@Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "classpath:${env}.properties",
+        "classpath:local.properties"
+})
+public interface WebConfig extends Config {
+    @Key("browser")
+    @DefaultValue("CHROME")
+    String getBrowser();
+
+    @Key("browserVersion")
+    @DefaultValue("")
+    String getBrowserVersion();
+
+    @Key("remoteUrl")
+    @DefaultValue("")
+    String getRemoteUrl();
+
+    @Key("browserSize")
+    @DefaultValue("1920x1080")
+    String getBrowserSize();
+
+    @Key("baseUrl")
+    @DefaultValue("https://multicards.io")
+    String getBaseUrl();
+
+    @Key("headless")
+    @DefaultValue("false")
+    boolean isHeadless();
+}

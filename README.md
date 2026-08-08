@@ -55,6 +55,8 @@
 
 ## Сборка в Jenkins
 
+[Открыть Job в Jenkins](https://jenkins.autotests.cloud/job/41-m_a_l_qa-unit10/)
+
 <p align="center">
 <img src="images/Jenkins.png" alt="Jenkins" width="900"/>
 </p>
@@ -75,18 +77,26 @@
 ### Локальный запуск
 
 ```bash
-gradle clean test
+./gradlew clean test
 ```
+
+По умолчанию используются настройки из `local.properties`: локальный Chrome,
+видимое окно браузера и сайт MultiCards. Любую настройку можно переопределить,
+например: `./gradlew clean test -Dheadless=true -DbrowserSize=1440x900`.
 
 ### Удалённый запуск
 
 ```bash
-gradle clean test \
--Dbrowser=CHROME \
--DbrowserVersion=127.0 \
--DbrowserResolution=1920x1080 \
--DbaseUrl=https://multicards.io \
+./gradlew clean test -Denv=remote \
+  -DremoteUrl=https://user:password@selenoid.example/wd/hub
 ```
+
+Настройки берутся из `remote.properties` и также могут быть переопределены через
+`-Dbrowser`, `-DbrowserVersion`, `-DbrowserSize`, `-DbaseUrl`, `-DremoteUrl` и
+`-Dheadless`.
+
+Логин и пароль Selenoid не следует сохранять в репозитории: передавайте URL
+параметром Jenkins или через командную строку.
 
 ---
 
