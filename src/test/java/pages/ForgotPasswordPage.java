@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
+import static data.TestData.CONFIRMATION_CODE_TEXT;
 import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.exactValue;
 import static com.codeborne.selenide.Condition.text;
@@ -14,8 +15,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class ForgotPasswordPage {
-    private static final String CONFIRMATION_CODE_TEXT = "Confirmation code";
-
+    // Elements
     private final SelenideElement emailInput =
             $("form input[type='text']");
 
@@ -25,6 +25,7 @@ public class ForgotPasswordPage {
     private final SelenideElement confirmationCodeLabel =
             $$("form div").findBy(text(CONFIRMATION_CODE_TEXT));
 
+    //Actions
     @Step("Ввести email: {value}")
     public ForgotPasswordPage setEmail(String value) {
         emailInput.shouldBe(visible, enabled)

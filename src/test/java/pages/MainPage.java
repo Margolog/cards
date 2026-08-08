@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
+import static data.TestData.TELEGRAM_SUPPORT_TEXT;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,7 +15,7 @@ public class MainPage {
     private SelenideElement loginButton = $("a[href='/login']");
     private final SelenideElement signUpButton = $("a[href='/sign-up']");
     private SelenideElement languageButton = $("button[aria-haspopup='true']");
-    private final SelenideElement telegramSupportLink = $$("a").findBy(text("@multicards_support"));
+    private final SelenideElement telegramSupportLink = $$("a").findBy(text(TELEGRAM_SUPPORT_TEXT));
 
     //Actions
     @Step("Открыть главную страницу")

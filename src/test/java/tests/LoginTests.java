@@ -6,13 +6,13 @@ import pages.ForgotPasswordPage;
 import pages.LoginPage;
 import pages.SignUpPage;
 
+import static data.TestData.INVALID_EMAIL;
+import static data.TestData.PASSWORD;
+import static data.TestData.RECOVERY_EMAIL;
 import static io.qameta.allure.Allure.step;
 
 public class LoginTests extends BaseTest {
 
-    private static String inValidEmail = "inValidEmail";
-    private static String password = "1234";
-    private static final String RECOVERY_EMAIL = "test@test.ru";
     LoginPage loginPage = new LoginPage();
 
 
@@ -36,8 +36,8 @@ public class LoginTests extends BaseTest {
         });
 
         step("Ввести некорректный email, пароль", () -> {
-            loginPage.setEmail(inValidEmail)
-                     .setPassword(password);
+            loginPage.setEmail(INVALID_EMAIL)
+                     .setPassword(PASSWORD);
 
         });
 
