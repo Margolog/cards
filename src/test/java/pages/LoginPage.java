@@ -6,7 +6,7 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     // Elements
     private final SelenideElement googleLoginButton =
@@ -34,6 +34,7 @@ public class LoginPage {
     @Step("Открыть страницу авторизации")
     public LoginPage openPage() {
         open("/login");
+        waitForPageLoaded();
         return this;
     }
 

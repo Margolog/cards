@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class MainPage {
+public class MainPage extends BasePage {
 
     //Elements
     private SelenideElement loginButton = $("a[href='/login']");
@@ -21,6 +21,7 @@ public class MainPage {
     @Step("Открыть главную страницу")
     public MainPage openPage() {
         open("");
+        waitForPageLoaded();
         return this;
     }
 
