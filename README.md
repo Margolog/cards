@@ -11,6 +11,7 @@
 - Технологии и инструменты
 - Реализованные проверки
 - Сборка в Jenkins
+- Видео прохождения теста
 - Запуск из терминала
 - [Allure Report](https://jenkins.qa.guru/job/41-m_a_l_qa-unit10-ui/allure/)
 - [Allure TestOps](https://allure.autotests.cloud/project/5244/test-cases/44953?search=W3siaWQiOiJ0eXBlIiwidHlwZSI6InRlc3RDYXNlVHlwZUFycmF5IiwidmFsdWUiOlsiYXV0b21hdGVkIl19XQ%3D%3D&treeId=0)
@@ -63,18 +64,26 @@
 <img src="images/Jenkins.png" alt="Jenkins" width="900"/>
 </p>
 
-Jenkins выполняет удалённый запуск тестов со следующими настройками:
+Jenkins выполняет параметризованный удалённый запуск тестов. Перед стартом
+workspace очищается, поэтому каждый прогон начинается в чистом окружении.
+Параметры сборки:
 
 - окружение: `remote`
-- браузер: `chrome`
-- версия браузера: `148.0`
-- размер окна: `1920x1080`
-- базовый URL: `https://multicards.io`
-- режим запуска: `headless=true`
+- `BROWSER` — браузер, по умолчанию `chrome`
+- `BROWSER_VERSION` — версия браузера, по умолчанию `148.0`
+- `BROWSER_SIZE` — размер окна, по умолчанию `1920x1080`
+- `BASE_URL` — адрес тестируемого сайта, по умолчанию `https://multicards.io`
+- `HEADLESS` — режим без графического окна, для записи видео используется `false`
 
 Адрес Selenoid хранится в Jenkins Credentials и передаётся в сборку через
 переменную `SELENOID_REMOTE_URL`. Результаты тестов из `build/allure-results`
 публикуются в Allure Report и отправляются в Allure TestOps.
+
+---
+
+## Видео прохождения теста
+
+[Смотреть видео удалённого запуска UI-теста](images/test-run.mp4)
 
 ---
 

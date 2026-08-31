@@ -10,7 +10,6 @@ import pages.MainPage;
 
 import static data.TestData.REGISTRATION_BUTTON_TEXT;
 import static data.TestData.TELEGRAM_SUPPORT_URL;
-import static io.qameta.allure.Allure.step;
 
 public class MainPageTests extends BaseTest {
 
@@ -25,28 +24,18 @@ public class MainPageTests extends BaseTest {
     @Story("Локализация интерфейса")
     @DisplayName("В хедере отображаются пункты меню")
     void headerMenuItemsShouldBeVisibleTest(String menuItem) {
-        step("Открыть главную страницу на испанском языке", () -> {
-            mainPage.openPage()
-                    .openLanguageMenu()
-                    .chooseLanguage(Language.SPANISH.getValue());
-        });
-
-        step("Проверить пункт меню: " + menuItem, () -> {
-            mainPage.checkHeaderMenuItem(menuItem);
-        });
+        mainPage.openPage()
+                .openLanguageMenu()
+                .chooseLanguage(Language.SPANISH.getValue())
+                .checkHeaderMenuItem(menuItem);
     }
 
     @Test
     @Story("Поддержка в Telegram")
     @DisplayName("Ссылка на Telegram support соответствует ожидаемой")
     void telegramSupportLinkShouldBeCorrectTest() {
-        step("Открыть главную страницу", () -> {
-            mainPage.openPage();
-        });
-
-        step("Проверить ссылку на Telegram support", () -> {
-            mainPage.checkTelegramSupportLink(TELEGRAM_SUPPORT_URL);
-        });
+        mainPage.openPage()
+                .checkTelegramSupportLink(TELEGRAM_SUPPORT_URL);
     }
 
 
@@ -54,17 +43,9 @@ public class MainPageTests extends BaseTest {
     @Story("Локализация интерфейса")
     @DisplayName("После выбора испанского языка кнопка регистрации отображается на английском языке")
     void spanishLanguageShouldBeSelectedTest() {
-        step("Открыть главную страницу", () -> {
-            mainPage.openPage();
-        });
-
-        step("Изменить язык на испанский", () -> {
-            mainPage.openLanguageMenu()
-                    .chooseLanguage(Language.SPANISH.getValue());
-        });
-
-        step("Проверить, что текст кнопки регистрации отображается на английском", () -> {
-            mainPage.checkRegistrationButtonText(REGISTRATION_BUTTON_TEXT);
-        });
+        mainPage.openPage()
+                .openLanguageMenu()
+                .chooseLanguage(Language.SPANISH.getValue())
+                .checkRegistrationButtonText(REGISTRATION_BUTTON_TEXT);
     }
 }
