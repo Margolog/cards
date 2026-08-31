@@ -10,8 +10,8 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
@@ -38,7 +38,11 @@ public class BaseTest {
 
         ChromeOptions options = new ChromeOptions();
 
-        options.addArguments("--lang=en-US");
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.addArguments(
+                "--lang=en-US",
+                "--disable-dev-shm-usage"
+        );
         options.setExperimentalOption(
                 "prefs",
                 Map.of("intl.accept_languages", "en-US,en")
