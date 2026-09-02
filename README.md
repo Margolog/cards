@@ -79,15 +79,6 @@ workspace очищается, поэтому каждый прогон начи�
 переменную `SELENOID_REMOTE_URL`. Результаты тестов из `build/allure-results`
 публикуются в Allure Report и отправляются в Allure TestOps.
 
----
-
-## Видео прохождения тест
-
-<p align="center">
-<img src="images/test-run.gif" alt="Видео удалённого запуска UI-теста" width="900"/>
-</p>
-
----
 
 ## Запуск из терминала
 
@@ -171,3 +162,13 @@ workspace очищается, поэтому каждый прогон начи�
 <p align="center">
 <img src="images/telegram2.png" alt="Telegram" width="600"/>
 </p>
+
+---
+
+## Видео прохождения теста
+
+<p align="center">
+<img src="images/test-run.gif" alt="Видео удалённого запуска UI-теста" width="900"/>
+</p>
+
+---
